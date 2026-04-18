@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Del Salado — Productos naturales de nuestra finca familiar · San Miguel, Santander</title>
+<meta name="description" content="Miel, polen, café, aguacate hass y huevos de codorniz. Productos naturales cultivados con amor en San Miguel, Santander." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     DEL SALADO — Hoja de estilos
+     ============================================================ */
+
+  :root{
+    --cream:        #f5eedf;
+    --cream-deep:   #ece3cf;
+    --paper:        #faf5e9;
+    --ink:          #2a1d12;
+    --ink-soft:     #4a3826;
+    --honey:        #c8862e;
+    --honey-deep:   #9a5e16;
+    --olive:        #5c6a3a;
+    --olive-deep:   #3d4726;
+    --terracotta:   #b5551c;
+    --rule:         rgba(42, 29, 18, 0.18);
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Textura sutil de papel */
+  body::before{
+    content:'';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(154, 94, 22, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(92, 106, 58, 0.03) 0%, transparent 40%);
+  }
+
+  .serif{ font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+
+  img{ display: block; max-width: 100%; height: auto; }
+
+  a{ color: inherit; text-decoration: none; }
+
+  /* ====== NAV ====== */
+  nav.top{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    background: rgba(250, 245, 233, 0.72);
+    border-bottom: 1px solid var(--rule);
+    transition: padding 0.3s ease;
+  }
+  nav.top .brand{
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  nav.top .brand em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--honey-deep);
+  }
+  nav.top .links{ display: flex; gap: 32px; align-items: center; }
+  nav.top .links a{
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  nav.top .links a:hover{ color: var(--honey-deep); }
+  nav.top .nav-cta{
+    background: var(--ink);
+    color: var(--cream);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  nav.top .nav-cta:hover{ background: var(--honey-deep); color: var(--cream); }
+  nav.top .mobile-toggle{ display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: var(--ink); }
+
+  /* ====== HERO ====== */
+  .hero{
+    position: relative;
+    min-height: 100vh;
+    padding: 140px 32px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  .hero-text .eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--honey-deep);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-text .eyebrow::before{
+    content:'';
+    width: 40px;
+    height: 1px;
+    background: var(--honey-deep);
+  }
+  .hero-text h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(44px, 6.2vw, 92px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+  .hero-text h1 em{
+    font-style: italic;
+    font-weight: 300;
+    color: var(--honey-deep);
+    font-variation-settings: "opsz" 144;
+  }
+  .hero-text p.lead{
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-actions{ display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 16px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.25s;
+  }
+  .btn-primary:hover{ background: var(--honey-deep); transform: translateY(-2px); }
+  .btn-ghost{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    transition: all 0.25s;
+  }
+  .btn-ghost:hover{ background: var(--ink); color: var(--cream); }
+
+  .hero-image{
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -30px rgba(42, 29, 18, 0.4);
+  }
+  .hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+  }
+  .hero-image .tag{
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: var(--paper);
+    padding: 12px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-image .tag::before{
+    content:'';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse{
+    0%, 100%{ opacity: 1; }
+    50%{ opacity: 0.4; }
+  }
+
+  /* Adorno decorativo del hero */
+  .hero-ornament{
+    position: absolute;
+    top: 160px;
+    right: 48%;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--olive-deep);
+    opacity: 0.6;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.3em;
+    pointer-events: none;
+  }
+
+  /* ====== MARQUEE / CINTA ====== */
+  .marquee{
+    background: var(--ink);
+    color: var(--cream);
+    overflow: hidden;
+    padding: 22px 0;
+    border-top: 1px solid var(--honey-deep);
+    border-bottom: 1px solid var(--honey-deep);
+    position: relative;
+    z-index: 3;
+  }
+  .marquee-track{
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .marquee-track span{ display: inline-flex; align-items: center; gap: 48px; }
+  .marquee-track .dot{
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--honey);
+  }
+  @keyframes scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* ====== SECTION INTRO ====== */
+  .section-intro{
+    padding: 120px 32px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+    align-items: end;
+    position: relative;
+    z-index: 2;
+  }
+  .section-intro .kicker{
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--honey-deep);
+    font-weight: 500;
+  }
+  .section-intro h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .section-intro h2 em{
+    font-style: italic;
+    color: var(--honey-deep);
+    font-weight: 400;
+  }
+
+  /* ====== PRODUCTOS GRID ====== */
+  .productos{
+    padding: 20px 32px 120px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .productos-grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+
+  .producto{
+    position: relative;
+    background: var(--cream);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+  }
+  .producto:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -30px rgba(42, 29, 18, 0.35);
+  }
+  .producto-img{
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+  .producto-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  .producto:hover .producto-img img{ transform: scale(1.05); }
+
+  .producto-num{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-style: italic;
+    background: var(--paper);
+    padding: 6px 12px;
+    border-radius: 100px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+
+  .producto-body{
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .producto-categoria{
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--olive-deep);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .producto h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .producto .desc{
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    flex: 1;
+    font-weight: 300;
+  }
+
+  .variantes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .variante{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  .variante:last-child{ border-bottom: 1px solid var(--rule); }
+  .variante .presentacion{
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .variante .precio{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .btn-producto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 14px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    width: 100%;
+  }
+  .btn-producto:hover{ background: var(--honey-deep); }
+  .btn-producto svg{ width: 16px; height: 16px; }
+
+  /* Tamaños especiales para productos destacados */
+  .producto.wide{ grid-column: span 6; }
+  .producto.wide .producto-img{ aspect-ratio: 16/10; }
+  .producto.third{ grid-column: span 4; }
+  .producto.half{ grid-column: span 6; }
+
+  /* ====== HISTORIA / RAÍCES ====== */
+  .historia{
+    background: var(--ink);
+    color: var(--cream);
+    padding: 140px 32px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .historia::before{
+    content:'';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(200, 134, 46, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .historia-inner{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+  .historia .kicker{
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--honey);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .historia .kicker::before{
+    content:'';
+    width: 40px; height: 1px;
+    background: var(--honey);
+  }
+  .historia h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .historia h2 em{ font-style: italic; color: var(--honey); font-weight: 400; }
+  .historia p{
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    color: rgba(245, 238, 223, 0.82);
+    font-weight: 300;
+  }
+  .historia .firma{
+    margin-top: 40px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--honey);
+  }
+
+  .historia-imgs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .historia-imgs figure{
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .historia-imgs figure:first-child{ transform: translateY(-32px); }
+  .historia-imgs figure:last-child{ transform: translateY(32px); }
+  .historia-imgs img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  /* ====== GALERÍA / MOSAICO ====== */
+  .mosaico{
+    padding: 120px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .mosaico-header{
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .mosaico-header .kicker{
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--honey-deep);
+    margin-bottom: 20px;
+  }
+  .mosaico-header h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .mosaico-header h2 em{ font-style: italic; color: var(--honey-deep); font-weight: 400; }
+
+  .mosaico-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 16px;
+  }
+  .mosaico-grid figure{
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+  }
+  .mosaico-grid figure img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+  .mosaico-grid figure:hover img{ transform: scale(1.06); }
+  .mosaico-grid figure:nth-child(1){ grid-column: span 2; grid-row: span 2; }
+  .mosaico-grid figure:nth-child(2){ grid-column: span 1; grid-row: span 1; }
+  .mosaico-grid figure:nth-child(3){ grid-column: span 1; grid-row: span 2; }
+  .mosaico-grid figure:nth-child(4){ grid-column: span 1; grid-row: span 1; }
+
+  /* ====== CÓMO COMPRAR ====== */
+  .comprar{
+    background: var(--cream-deep);
+    padding: 120px 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .comprar-inner{
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .comprar .kicker{
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--honey-deep);
+    margin-bottom: 20px;
+  }
+  .comprar h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .comprar h2 em{ font-style: italic; color: var(--honey-deep); font-weight: 400; }
+  .comprar .lead{
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto 56px;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+  .pasos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 64px;
+  }
+  .paso{
+    text-align: left;
+    padding: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .paso .num{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 48px;
+    color: var(--honey-deep);
+    line-height: 1;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .paso h4{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .paso p{
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .btn-whatsapp{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #1fa855;
+    color: #fff;
+    padding: 18px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.25s;
+  }
+  .btn-whatsapp:hover{
+    background: #17813f;
+    transform: translateY(-2px);
+  }
+  .btn-whatsapp svg{ width: 20px; height: 20px; }
+
+  /* ====== FOOTER ====== */
+  footer{
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 32px 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(245, 238, 223, 0.15);
+  }
+  footer .brand-foot{
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  footer .brand-foot em{
+    font-style: italic;
+    color: var(--honey);
+    font-weight: 300;
+  }
+  footer .tagline{
+    font-size: 15px;
+    color: rgba(245, 238, 223, 0.7);
+    line-height: 1.6;
+    max-width: 380px;
+    font-weight: 300;
+  }
+  footer h5{
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--honey);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  footer ul{ list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  footer ul a{
+    font-size: 15px;
+    color: rgba(245, 238, 223, 0.8);
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+  footer ul a:hover{ color: var(--honey); }
+  footer .copy{
+    max-width: 1400px;
+    margin: 32px auto 0;
+    font-size: 13px;
+    color: rgba(245, 238, 223, 0.5);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* ====== FLOATING WA BUTTON ====== */
+  .fab-wa{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #1fa855;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 90;
+    box-shadow: 0 10px 30px -10px rgba(31, 168, 85, 0.5);
+    transition: transform 0.25s;
+  }
+  .fab-wa:hover{ transform: scale(1.05); }
+  .fab-wa svg{ width: 22px; height: 22px; }
+
+  /* ====== ANIMACIONES AL SCROLL ====== */
+  .fade-up{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  .fade-up.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 900px){
+    nav.top{ padding: 14px 20px; }
+    nav.top .links{ display: none; }
+    nav.top .links.open{
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      flex-direction: column;
+      background: var(--paper);
+      padding: 24px;
+      gap: 20px;
+      border-bottom: 1px solid var(--rule);
+      box-shadow: 0 20px 40px -20px rgba(0,0,0,0.2);
+    }
+    nav.top .mobile-toggle{ display: block; }
+    .hero{
+      grid-template-columns: 1fr;
+      padding: 110px 20px 60px;
+      gap: 40px;
+      min-height: auto;
+    }
+    .hero-ornament{ display: none; }
+    .section-intro{ grid-template-columns: 1fr; padding: 80px 20px 40px; gap: 24px; }
+    .productos{ padding: 20px 20px 80px; }
+    .productos-grid{ grid-template-columns: 1fr; gap: 20px; }
+    .producto.wide, .producto.third, .producto.half{ grid-column: span 1; }
+    .historia{ padding: 80px 20px; }
+    .historia-inner{ grid-template-columns: 1fr; gap: 40px; }
+    .historia-imgs figure:first-child, .historia-imgs figure:last-child{ transform: none; }
+    .mosaico{ padding: 80px 20px; }
+    .mosaico-grid{ grid-template-columns: repeat(2, 1fr); grid-template-rows: 200px 200px 200px; }
+    .mosaico-grid figure:nth-child(1){ grid-column: span 2; grid-row: span 1; }
+    .mosaico-grid figure:nth-child(2), .mosaico-grid figure:nth-child(3), .mosaico-grid figure:nth-child(4){ grid-column: span 1; grid-row: span 1; }
+    .comprar{ padding: 80px 20px; }
+    .pasos{ grid-template-columns: 1fr; gap: 20px; }
+    .footer-inner{ grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
+    .marquee-track{ font-size: 18px; gap: 32px; }
+    .marquee-track span{ gap: 32px; }
+    .fab-wa{ bottom: 16px; right: 16px; padding: 12px 18px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<nav class="top">
+  <a href="#top" class="brand">Del <em>Salado</em></a>
+  <div class="links" id="navLinks">
+    <a href="#productos">Productos</a>
+    <a href="#historia">Nuestra historia</a>
+    <a href="#comprar">Cómo comprar</a>
+    <a href="#" class="nav-cta" id="navWaCta">Pedir ahora</a>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">☰</button>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="top">
+  <div class="hero-ornament">Finca familiar · San Miguel, Santander</div>
+
+  <div class="hero-text">
+    <div class="eyebrow">Raíces de familia · Sabor de nuestra tierra</div>
+    <h1>
+      De nuestra finca<br>
+      a tu mesa, con <em>amor.</em>
+    </h1>
+    <p class="lead">
+      Miel, polen, café, aguacate hass y huevos de codorniz.
+      Productos naturales cosechados a mano en San Miguel, Santander —
+      con las enseñanzas de nuestros padres y el cariño de quienes
+      emprenden por gusto, no por prisa.
+    </p>
+    <div class="hero-actions">
+      <a href="#productos" class="btn-primary">Ver productos →</a>
+      <a href="#historia" class="btn-ghost">Conocer la finca</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="img/tostando-cafe.jpg" alt="Tostando café del Salado en olla tradicional" />
+    <div class="tag">Cosechado esta temporada</div>
+  </div>
+</section>
+
+<!-- =================== MARQUEE =================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>
+      Miel pura de abejas <span class="dot"></span>
+      Polen de las flores del páramo <span class="dot"></span>
+      Café tostado en leña <span class="dot"></span>
+      Aguacate hass recién cosechado <span class="dot"></span>
+      Huevos de codorniz <span class="dot"></span>
+    </span>
+    <span>
+      Miel pura de abejas <span class="dot"></span>
+      Polen de las flores del páramo <span class="dot"></span>
+      Café tostado en leña <span class="dot"></span>
+      Aguacate hass recién cosechado <span class="dot"></span>
+      Huevos de codorniz <span class="dot"></span>
+    </span>
+  </div>
+</div>
+
+<!-- =================== SECCIÓN PRODUCTOS =================== -->
+<div class="section-intro" id="productos">
+  <div class="kicker fade-up">— Catálogo</div>
+  <h2 class="fade-up">
+    Lo que la tierra <em>nos regala</em>,
+    lo traemos hasta ti.
+  </h2>
+</div>
+
+<section class="productos">
+  <div class="productos-grid" id="productosGrid">
+    <!-- Los productos se renderizan desde JS para admin fácil -->
+  </div>
+</section>
+
+<!-- =================== HISTORIA =================== -->
+<section class="historia" id="historia">
+  <div class="historia-inner">
+    <div>
+      <div class="kicker fade-up">— Nuestra historia</div>
+      <h2 class="fade-up">
+        Un emprendimiento hecho <em>por amor</em>,
+        no por prisa.
+      </h2>
+      <p class="fade-up">
+        Del Salado nace en la finca familiar de San Miguel, Santander,
+        donde mis padres nos enseñaron que la tierra responde al cariño
+        con el que se trabaja. Cada producto que ofrecemos lleva esas
+        raíces: la paciencia del apicultor con sus abejas, el cuidado
+        del tostado del café, el respeto por el tiempo de cada cosecha.
+      </p>
+      <p class="fade-up">
+        No somos una industria — somos una familia que cultiva, cosecha,
+        empaca y te entrega. Por eso cada tarro de miel, cada bolsa de polen
+        y cada libra de café tiene nombre propio, origen claro y el sabor
+        honesto de nuestra tierra.
+      </p>
+      <div class="firma fade-up">— Familia Del Salado</div>
+    </div>
+    <div class="historia-imgs">
+      <figure class="fade-up"><img src="img/productor-aguacate.jpg" alt="Productor cosechando aguacate hass" /></figure>
+      <figure class="fade-up"><img src="img/apicultor.jpg" alt="Trabajo con colmenas en la finca" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================== MOSAICO / GALERÍA =================== -->
+<section class="mosaico">
+  <div class="mosaico-header">
+    <div class="kicker fade-up">— De la finca</div>
+    <h2 class="fade-up">Donde <em>sucede</em> todo.</h2>
+  </div>
+  <div class="mosaico-grid">
+    <figure class="fade-up"><img src="img/polen-secado.jpg" alt="Polen secándose al sol con vista de montañas" /></figure>
+    <figure class="fade-up"><img src="img/aguacate-arbol.jpg" alt="Aguacates en el árbol" /></figure>
+    <figure class="fade-up"><img src="img/miel-tarro.jpg" alt="Tarro de miel frente a las montañas" /></figure>
+    <figure class="fade-up"><img src="img/polen-abeja.jpg" alt="Abeja sobre granos de polen" /></figure>
+  </div>
+</section>
+
+<!-- =================== CÓMO COMPRAR =================== -->
+<section class="comprar" id="comprar">
+  <div class="comprar-inner">
+    <div class="kicker fade-up">— Cómo comprar</div>
+    <h2 class="fade-up">Tu pedido, <em>a un mensaje</em> de distancia.</h2>
+    <p class="lead fade-up">
+      Atendemos los pedidos de forma directa y personal. Escríbenos por
+      WhatsApp y coordinamos empaque, pago y despacho contigo.
+    </p>
+    <div class="pasos">
+      <div class="paso fade-up">
+        <div class="num">01</div>
+        <h4>Escoge tus productos</h4>
+        <p>Dale al botón "Pedir" del producto que te gustó. El mensaje se escribe solo.</p>
+      </div>
+      <div class="paso fade-up">
+        <div class="num">02</div>
+        <h4>Coordinamos contigo</h4>
+        <p>Confirmamos disponibilidad, cantidades, forma de pago y envío directamente por WhatsApp.</p>
+      </div>
+      <div class="paso fade-up">
+        <div class="num">03</div>
+        <h4>Recibes en casa</h4>
+        <p>Despachamos a todo Colombia. Producto empacado con cuidado, listo para disfrutar.</p>
+      </div>
+    </div>
+    <a href="#" class="btn-whatsapp fade-up" id="mainWaCta">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Escribir por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="brand-foot">Del <em>Salado</em></div>
+      <p class="tagline">
+        Productos naturales de nuestra finca familiar.
+        San Miguel, Santander — Colombia.
+      </p>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <ul id="contactList">
+        <!-- se llena desde JS -->
+      </ul>
+    </div>
+    <div>
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#historia">Nuestra historia</a></li>
+        <li><a href="#comprar">Cómo comprar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">
+    <span>© 2026 Del Salado · Hecho con cariño en San Miguel, Santander</span>
+    <span id="footSlogan">Raíces de familia · Sabor de nuestra tierra</span>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="#" class="fab-wa" id="fabWa">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Pedir
+</a>
+
+<!-- ============================================================
+     CONFIGURACIÓN Y ADMIN
+     ============================================================
+     👇 PANEL DE ADMINISTRACIÓN - EDITA AQUÍ 👇
+     Cambia precios, productos, WhatsApp, Instagram aquí
+     y todo el sitio se actualiza automáticamente.
+     ============================================================ -->
+<script>
+const CONFIG = {
+  // --- Contacto ---
+  whatsapp:        "573124479914",   // Número principal (sin el +)
+  telefono2:       "573003528083",   // Segundo número
+  instagram:       "delsaladoorigen",
+  ubicacion:       "San Miguel, Santander — Colombia",
+  emailContacto:   "",  // opcional, déjalo vacío si no quieres mostrar email
+
+  // --- Productos ---
+  // Para agregar un producto: copia uno de estos bloques completo
+  // Para quitar un producto: borra todo su bloque
+  // Para cambiar precios: cambia solo el número (sin puntos ni comas)
+  productos: [
+    {
+      id: "miel",
+      categoria: "De las colmenas",
+      nombre: "Miel de abejas",
+      descripcion: "Miel pura, cosechada de nuestras colmenas en las montañas de Santander. Sin filtrar, sin aditivos. Solo abejas, flores y tiempo.",
+      imagen: "img/miel-abeja.jpg",
+      tamaño: "wide",  // wide, half, third — cambia el tamaño del card
+      variantes: [
+        { presentacion: "Tarro 500 cc", precio: 25000 }
+      ]
+    },
+    {
+      id: "polen",
+      categoria: "De las colmenas",
+      nombre: "Polen natural",
+      descripcion: "Energía pura de la naturaleza. Las abejas lo recolectan de las flores del páramo y nosotros lo secamos al sol con vista a las montañas.",
+      imagen: "img/polen-bolsa.jpg",
+      tamaño: "half",
+      variantes: [
+        { presentacion: "Bolsa 250 gr", precio: 14000 }
+      ]
+    },
+    {
+      id: "cafe",
+      categoria: "De nuestro cafetal",
+      nombre: "Café del Salado",
+      descripcion: "Tostado medio, calidad seleccionada. Molido o en grano, según lo prefieras. Sabor redondo, notas dulces de nuestra tierra.",
+      imagen: "img/cafe-bolsa.jpg",
+      tamaño: "half",
+      variantes: [
+        { presentacion: "Libra (500 gr)",       precio: 32000 },
+        { presentacion: "Media libra (250 gr)", precio: 18000 }
+      ]
+    },
+    {
+      id: "aguacate",
+      categoria: "De la huerta",
+      nombre: "Aguacate Hass",
+      descripcion: "Cosechado a mano cuando está en su punto. Cremoso, fresco, directamente del árbol a tu cocina. Disponibilidad según temporada.",
+      imagen: "img/aguacate-rama.jpg",
+      tamaño: "third",
+      variantes: [
+        { presentacion: "Precio por libra",  precio: null, notaPrecio: "Consultar" }
+      ]
+    },
+    {
+      id: "huevos",
+      categoria: "Del corral",
+      nombre: "Huevos de codorniz",
+      descripcion: "Frescos, recogidos a diario. Una delicia nutritiva y versátil. Empaque cuidado para que lleguen perfectos.",
+      imagen: "img/huevos-codorniz.jpg",
+      tamaño: "third",
+      variantes: [
+        { presentacion: "Caja de 24 unidades", precio: 6500 }
+      ]
+    },
+    {
+      id: "combo",
+      categoria: "Combinados",
+      nombre: "Combo Despertar",
+      descripcion: "Café media libra + tarro de miel 500cc. El regalo perfecto, o tu ritual de cada mañana. Pídelo y te decimos disponibilidad.",
+      imagen: "img/combo-despertar.jpg",
+      tamaño: "third",
+      variantes: [
+        { presentacion: "Café 250gr + Miel 500cc", precio: 40000 }
+      ]
+    }
+  ]
+};
+
+// ============================================================
+// 👆 HASTA AQUÍ LA PARTE ADMIN 👆
+// Abajo va la lógica automática — no necesitas editarla.
+// ============================================================
+
+// Formato de precio colombiano
+function formatearPrecio(n){
+  if (n == null) return null;
+  return "$" + n.toLocaleString('es-CO') + " COP";
+}
+
+// Generar link de WhatsApp con mensaje pre-llenado
+function waLink(mensaje){
+  const texto = encodeURIComponent(mensaje);
+  return `https://wa.me/${CONFIG.whatsapp}?text=${texto}`;
+}
+
+// Generar mensaje de pedido
+function mensajePedido(producto, variante){
+  const precioTxt = variante.precio != null
+    ? formatearPrecio(variante.precio)
+    : (variante.notaPrecio || 'a consultar');
+  return `¡Hola Del Salado! 🌿\n\nMe interesa pedir:\n• ${producto.nombre} — ${variante.presentacion} (${precioTxt})\n\n¿Me podrían confirmar disponibilidad y datos de envío?\n\nGracias.`;
+}
+
+// Mensaje general
+const MENSAJE_GENERAL = `¡Hola Del Salado! 🌿 Me gustaría conocer más sobre sus productos y hacer un pedido. ¿Me pueden ayudar?`;
+
+// ====== RENDERIZAR PRODUCTOS ======
+function renderProductos(){
+  const grid = document.getElementById('productosGrid');
+  grid.innerHTML = CONFIG.productos.map((p, i) => {
+    const numero = String(i + 1).padStart(2, '0');
+    const variantesHTML = p.variantes.map(v => `
+      <div class="variante">
+        <span class="presentacion">${v.presentacion}</span>
+        <span class="precio">${v.precio != null ? formatearPrecio(v.precio) : (v.notaPrecio || '')}</span>
+      </div>
+    `).join('');
+
+    // botón principal usa la primera variante
+    const primerVariante = p.variantes[0];
+    const wa = waLink(mensajePedido(p, primerVariante));
+
+    return `
+      <article class="producto ${p.tamaño || 'third'} fade-up">
+        <div class="producto-img">
+          <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" />
+          <span class="producto-num">N.º ${numero}</span>
+        </div>
+        <div class="producto-body">
+          <div class="producto-categoria">${p.categoria}</div>
+          <h3 class="serif">${p.nombre}</h3>
+          <p class="desc">${p.descripcion}</p>
+          <div class="variantes">${variantesHTML}</div>
+          <a href="${wa}" target="_blank" rel="noopener" class="btn-producto">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Pedir por WhatsApp
+          </a>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+// ====== RENDERIZAR CONTACTO EN FOOTER ======
+function renderContacto(){
+  const list = document.getElementById('contactList');
+  const items = [];
+  items.push(`<li><a href="${waLink(MENSAJE_GENERAL)}" target="_blank" rel="noopener">WhatsApp: +${CONFIG.whatsapp.replace(/^57/, '57 ')}</a></li>`);
+  items.push(`<li><a href="tel:+${CONFIG.telefono2}">Tel: +${CONFIG.telefono2.replace(/^57/, '57 ')}</a></li>`);
+  if (CONFIG.instagram){
+    items.push(`<li><a href="https://instagram.com/${CONFIG.instagram}" target="_blank" rel="noopener">@${CONFIG.instagram}</a></li>`);
+  }
+  if (CONFIG.emailContacto){
+    items.push(`<li><a href="mailto:${CONFIG.emailContacto}">${CONFIG.emailContacto}</a></li>`);
+  }
+  items.push(`<li>${CONFIG.ubicacion}</li>`);
+  list.innerHTML = items.join('');
+}
+
+// ====== BOTONES WA GENERALES ======
+function setupWaButtons(){
+  const link = waLink(MENSAJE_GENERAL);
+  document.getElementById('navWaCta').href = link;
+  document.getElementById('navWaCta').target = "_blank";
+  document.getElementById('mainWaCta').href = link;
+  document.getElementById('mainWaCta').target = "_blank";
+  document.getElementById('fabWa').href = link;
+  document.getElementById('fabWa').target = "_blank";
+}
+
+// ====== MOBILE MENU ======
+function setupMobileMenu(){
+  const toggle = document.getElementById('mobileToggle');
+  const nav = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+  // cerrar al hacer click en link
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+}
+
+// ====== OBSERVADOR FADE-UP ======
+function setupAnimations(){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  // Observar todo lo que tenga .fade-up, incluso lo renderizado luego
+  setTimeout(() => {
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  }, 50);
+}
+
+// ====== INIT ======
+document.addEventListener('DOMContentLoaded', () => {
+  renderProductos();
+  renderContacto();
+  setupWaButtons();
+  setupMobileMenu();
+  setupAnimations();
+});
+</script>
+
+</body>
+</html>
